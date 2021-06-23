@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/popularMoviesFragment">
 
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.awalideck.moviesapp.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/popularMoviesFragment"
+        android:name="com.awalideck.moviesapp.PopularMoviesFragment"
+        android:label="PopularMoviesFragment"
+        tools:layout="@layout/fragment_popular_movies"/>
 </navigation>
