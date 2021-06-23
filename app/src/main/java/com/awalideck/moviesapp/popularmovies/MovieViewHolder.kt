@@ -7,4 +7,5 @@ class MovieViewHolder(binding: ListItemMovieBinding): RecyclerView.ViewHolder(bi
     val titleTextView = binding.titleTextView
     val overviewTextView = binding.overviewTextView
     val releaseDateTV = binding.releaseDateTV
+    val posterImageView = binding.posterImageView
 }

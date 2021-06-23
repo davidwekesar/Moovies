@@ -1,16 +1,18 @@
 package com.awalideck.moviesapp.popularmovies
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.awalideck.moviesapp.R
 import com.awalideck.moviesapp.databinding.ListItemMovieBinding
 import com.awalideck.moviesapp.models.Movie
 import com.awalideck.moviesapp.utils.formatDate
+import com.squareup.picasso.Picasso
 
-class MovieAdapter(private val context: Context, private val movies: List<Movie>) : RecyclerView.Adapter<MovieViewHolder>() {
+class MovieAdapter(private val context: Context, private val movies: List<Movie>) :
+    RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -24,6 +26,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             holder.titleTextView.text = title
             holder.overviewTextView.text = overview
             holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
+            Picasso.get().load(getPosterURL(posterPath)).into(holder.posterImageView)
         }
     }
 
@@ -34,6 +37,21 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
      * If null return "TBA", otherwise, return a formatted date string.
      */
     private fun setTheReleaseDate(releaseDate: String?): String {
-        return if (releaseDate == null) context.getString(R.string.to_be_announced) else formatDate(releaseDate)
+        return if (releaseDate == null) context.getString(R.string.to_be_announced) else formatDate(
+            releaseDate
+        )
+    }
+
+    private fun getPosterURL(path: String): Uri {
+        val uriBuilder = Uri.Builder()
+        uriBuilder.apply {
+            scheme("https")
+                .authority("image.tmdb.org")
+                .appendPath("t")
+                .appendPath("p")
+                .appendPath("original")
+                .appendPath(path)
+        }
+        return uriBuilder.build()
     }
 }

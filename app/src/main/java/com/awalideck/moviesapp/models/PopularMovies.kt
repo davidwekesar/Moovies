@@ -9,5 +9,8 @@ data class Movie(
     val overview: String,
 
     @Json(name = "release_date")
-    val releaseDate: String? = null
+    val releaseDate: String? = null,
+
+    @Json(name = "poster_path")
+    val posterPath: String
 )
