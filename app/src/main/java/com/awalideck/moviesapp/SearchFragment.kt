@@ -37,15 +37,6 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
-    private fun formatDate(date: String): String {
-        val newPattern = "MMM d, yyyy"
-        val oldPattern = "yyyy-MM-dd"
-        val oldDateFormat = SimpleDateFormat(oldPattern)
-        val oldDate = oldDateFormat.parse(date)!!
-        val newDateFormat = SimpleDateFormat(newPattern)
-        return newDateFormat.format(oldDate)
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

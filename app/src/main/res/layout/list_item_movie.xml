@@ -32,7 +32,7 @@
         tools:text="@string/lorem_ipsum" />
 
     <TextView
-        android:id="@+id/dateTextView"
+        android:id="@+id/releaseDateTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

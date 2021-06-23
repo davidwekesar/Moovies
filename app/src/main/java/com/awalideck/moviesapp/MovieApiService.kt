@@ -1,5 +1,7 @@
 package com.awalideck.moviesapp
 
+import com.awalideck.moviesapp.models.Movie
+import com.awalideck.moviesapp.models.PopularMovies
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
@@ -21,11 +23,8 @@ private val retrofit = Retrofit.Builder()
 
 interface MovieApiService {
 
-    @GET("3/movie/550")
-    fun getMovieInfo(@Query("api_key") key: String): Call<Movie>
-
-    @GET("authentication/guest_session/new?api_key=${BuildConfig.MOVIEDB_KEY}")
-    fun getGuestSessionID(): Call<GuestSession>
+    @GET("3/movie/popular?api_key=${BuildConfig.MOVIEDB_KEY}&language=en-US&page=1")
+    fun getPopularMovies(): Call<PopularMovies>
 }
 
 object MovieApi {
