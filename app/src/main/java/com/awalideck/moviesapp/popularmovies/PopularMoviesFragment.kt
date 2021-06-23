@@ -1,7 +1,6 @@
 package com.awalideck.moviesapp.popularmovies
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +22,7 @@ class PopularMoviesFragment : Fragment() {
         _binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
 
         viewModel.movies.observe(viewLifecycleOwner, { movies ->
-            val movieAdapter = MovieAdapter(movies)
+            val movieAdapter = MovieAdapter(requireContext(), movies)
             binding.moviesRecyclerView.adapter = movieAdapter
         })
 
