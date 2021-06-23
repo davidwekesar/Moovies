@@ -14,6 +14,6 @@
     <fragment
         android:id="@+id/popularMoviesFragment"
         android:name="com.awalideck.moviesapp.popularmovies.PopularMoviesFragment"
-        android:label="PopularMoviesFragment"
-        tools:layout="@layout/fragment_popular_movies"/>
+        android:label="@string/popular_movies"
+        tools:layout="@layout/fragment_popular_movies" />
 </navigation>

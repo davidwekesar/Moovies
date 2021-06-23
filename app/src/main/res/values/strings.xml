@@ -3,4 +3,5 @@
     <string name="hint_title">Title</string>
     <string name="search">Search</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec justo libero, convallis eget dui eget, aliquet rhoncus arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer faucibus nec lorem in tincidunt. Quisque id lorem sollicitudin, aliquet turpis eu, tincidunt felis. Fusce convallis ipsum non tortor vehicula, quis dapibus sem dignissim. Proin vehicula metus est, vel venenatis felis egestas viverra. Nam cursus, ante id aliquet rutrum, augue tellus mollis orci, pretium interdum est ligula id enim. Pellentesque efficitur enim in laoreet facilisis. Sed ac sem hendrerit, sollicitudin diam maximus, molestie lacus. Vestibulum vel mollis lectus, sed laoreet ipsum. Vestibulum feugiat et lectus eu venenatis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam rutrum ullamcorper lobortis. Quisque ac nunc eu mauris mollis hendrerit. Nam tempus risus quis vestibulum sodales.</string>
+    <string name="popular_movies">Popular Movies</string>
 </resources>
