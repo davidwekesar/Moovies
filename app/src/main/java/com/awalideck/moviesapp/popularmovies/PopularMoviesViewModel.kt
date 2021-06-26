@@ -4,12 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.awalideck.moviesapp.MovieApi
 import com.awalideck.moviesapp.models.Movie
-import com.awalideck.moviesapp.models.PopularMovies
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.coroutines.launch
 
 class PopularMoviesViewModel : ViewModel() {
 
@@ -21,17 +19,14 @@ class PopularMoviesViewModel : ViewModel() {
     }
 
     private fun getPopularMovies() {
-        MovieApi.retrofitService.getPopularMovies().enqueue(object : Callback<PopularMovies> {
-            override fun onResponse(call: Call<PopularMovies>, response: Response<PopularMovies>) {
-                response.body()?.let { popularMovies ->
-                    _movies.value = popularMovies.results
-                }
+        viewModelScope.launch {
+            try {
+                val popularMovies = MovieApi.retrofitService.getPopularMovies()
+                _movies.value = popularMovies.results
+            } catch (e: Exception) {
+                Log.e(TAG, "Failure: ${e.message}")
             }
-
-            override fun onFailure(call: Call<PopularMovies>, t: Throwable) {
-                Log.e(TAG, "Failure: ${t.message}")
-            }
-        })
+        }
     }
 
     companion object {
