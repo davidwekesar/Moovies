@@ -28,6 +28,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
             Picasso.get()
                 .load(getPosterURL(posterPath))
+                .resize(80, 120)
                 .placeholder(R.drawable.ic_image_24)
                 .error(R.drawable.ic_broken_image_24)
                 .into(holder.posterImageView)
