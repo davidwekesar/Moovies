@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import com.awalideck.moviesapp.R
 import com.awalideck.moviesapp.databinding.ListItemMovieBinding
 import com.awalideck.moviesapp.models.Movie

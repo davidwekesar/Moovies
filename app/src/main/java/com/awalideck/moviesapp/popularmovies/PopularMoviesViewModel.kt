@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
-import com.awalideck.moviesapp.MovieApi
+import com.awalideck.moviesapp.data.network.MovieApi
 
 class PopularMoviesViewModel : ViewModel() {
 
