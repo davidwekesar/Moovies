@@ -26,6 +26,9 @@ class PopularMoviesFragment : Fragment() {
 
         val pagingAdapter = MovieAdapter(requireContext(), MovieComparator)
         binding.moviesRecyclerView.adapter = pagingAdapter
+        pagingAdapter.withLoadStateFooter(
+            footer = MovieLoadStateAdapter(pagingAdapter::retry)
+        )
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.flow.collectLatest { pagingData ->

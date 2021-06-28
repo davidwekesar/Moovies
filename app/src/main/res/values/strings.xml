@@ -7,4 +7,5 @@
     <string name="to_be_announced">TBA</string>
     <string name="released">Release Date:\u0020</string>
     <string name="content_desc_poster">Movie poster</string>
+    <string name="retry">Retry</string>
 </resources>
