@@ -6,7 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.awalideck.moviesapp.databinding.FragmentPopularMoviesBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 class PopularMoviesFragment : Fragment() {
 
@@ -21,10 +24,14 @@ class PopularMoviesFragment : Fragment() {
     ): View {
         _binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
 
-        viewModel.movies.observe(viewLifecycleOwner, { movies ->
-            val movieAdapter = MovieAdapter(requireContext(), movies)
-            binding.moviesRecyclerView.adapter = movieAdapter
-        })
+        val pagingAdapter = MovieAdapter(requireContext(), MovieComparator)
+        binding.moviesRecyclerView.adapter = pagingAdapter
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.flow.collectLatest { pagingData ->
+                pagingAdapter.submitData(pagingData)
+            }
+        }
 
         return binding.root
     }

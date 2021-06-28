@@ -5,6 +5,7 @@ import com.squareup.moshi.Json
 data class PopularMovies(val page: Int, val results: List<Movie>)
 
 data class Movie(
+    val id: Int,
     val title: String,
     val overview: String,
 

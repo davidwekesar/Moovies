@@ -4,6 +4,8 @@ import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.awalideck.moviesapp.R
 import com.awalideck.moviesapp.databinding.ListItemMovieBinding
@@ -11,8 +13,8 @@ import com.awalideck.moviesapp.models.Movie
 import com.awalideck.moviesapp.utils.formatDate
 import com.squareup.picasso.Picasso
 
-class MovieAdapter(private val context: Context, private val movies: List<Movie>) :
-    RecyclerView.Adapter<MovieViewHolder>() {
+class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCallback<Movie>) :
+    PagingDataAdapter<Movie, MovieViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -21,21 +23,21 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = movies[position]
-        with(movie) {
-            holder.titleTextView.text = title
-            holder.overviewTextView.text = overview
-            holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
-            Picasso.get()
-                .load(getPosterURL(posterPath))
-                .resize(80, 120)
-                .placeholder(R.drawable.ic_image_24)
-                .error(R.drawable.ic_broken_image_24)
-                .into(holder.posterImageView)
+        val movie = getItem(position)
+        movie?.let {
+            with(movie) {
+                holder.titleTextView.text = title
+                holder.overviewTextView.text = overview
+                holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
+                Picasso.get()
+                    .load(getPosterURL(posterPath))
+                    .resize(80, 120)
+                    .placeholder(R.drawable.ic_image_24)
+                    .error(R.drawable.ic_broken_image_24)
+                    .into(holder.posterImageView)
+            }
         }
     }
-
-    override fun getItemCount(): Int = movies.size
 
     /**
      * Checks whether the release date string received from the API is null.
@@ -58,5 +60,15 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
                 .appendPath(path)
         }
         return uriBuilder.build()
+    }
+}
+
+object MovieComparator : DiffUtil.ItemCallback<Movie>() {
+    override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+        return oldItem == newItem
     }
 }
