@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/posterImageView"
-        android:layout_width="80dp"
+        android:layout_width="81dp"
         android:layout_height="120dp"
         android:contentDescription="@string/content_desc_poster"
         android:scaleType="fitCenter"

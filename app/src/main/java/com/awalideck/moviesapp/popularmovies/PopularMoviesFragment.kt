@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadStateAdapter
 import com.awalideck.moviesapp.databinding.FragmentPopularMoviesBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -25,9 +26,9 @@ class PopularMoviesFragment : Fragment() {
         _binding = FragmentPopularMoviesBinding.inflate(inflater, container, false)
 
         val pagingAdapter = MovieAdapter(requireContext(), MovieComparator)
-        binding.moviesRecyclerView.adapter = pagingAdapter
-        pagingAdapter.withLoadStateFooter(
-            footer = MovieLoadStateAdapter(pagingAdapter::retry)
+        binding.moviesRecyclerView.adapter = pagingAdapter.withLoadStateHeaderAndFooter(
+            header = MovieLoadStateAdapter { pagingAdapter.retry() },
+            footer = MovieLoadStateAdapter { pagingAdapter.retry() }
         )
 
         viewLifecycleOwner.lifecycleScope.launch {

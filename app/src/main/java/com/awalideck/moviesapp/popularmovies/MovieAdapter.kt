@@ -30,7 +30,8 @@ class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCall
                 holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
                 Picasso.get()
                     .load(getPosterURL(posterPath))
-                    .resize(80, 120)
+                    .resize(81, 120)
+                    .onlyScaleDown()
                     .placeholder(R.drawable.ic_image_24)
                     .error(R.drawable.ic_broken_image_24)
                     .into(holder.posterImageView)
@@ -39,8 +40,7 @@ class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCall
     }
 
     /**
-     * Checks whether the release date string received from the API is null.
-     * If null return "TBA", otherwise, return a formatted date string.
+     * Checks whether the release date string received from the API is null and returns a string.
      */
     private fun setTheReleaseDate(releaseDate: String?): String {
         return if (releaseDate == null) context.getString(R.string.to_be_announced) else formatDate(
