@@ -4,16 +4,16 @@ import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.awalideck.moviesapp.R
 import com.awalideck.moviesapp.databinding.ListItemMovieBinding
 import com.awalideck.moviesapp.models.Movie
 import com.awalideck.moviesapp.utils.formatDate
 import com.squareup.picasso.Picasso
 
-class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCallback<Movie>) :
-    PagingDataAdapter<Movie, MovieViewHolder>(diffCallback) {
+class MovieAdapter(private val context: Context, private val movieList: List<Movie>) :
+    RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -22,20 +22,18 @@ class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCall
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = getItem(position)
-        movie?.let {
-            with(movie) {
-                holder.titleTextView.text = title
-                holder.overviewTextView.text = overview
-                holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
-                Picasso.get()
-                    .load(getPosterURL(posterPath))
-                    .resize(81, 120)
-                    .onlyScaleDown()
-                    .placeholder(R.drawable.ic_image_24)
-                    .error(R.drawable.ic_broken_image_24)
-                    .into(holder.posterImageView)
-            }
+        val movie = movieList[position]
+        with(movie) {
+            holder.titleTextView.text = title
+            holder.overviewTextView.text = overview
+            holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
+            Picasso.get()
+                .load(getPosterURL(posterPath))
+                .resize(108, 160)
+                .onlyScaleDown()
+                .placeholder(R.drawable.ic_image_24)
+                .error(R.drawable.ic_broken_image_24)
+                .into(holder.posterImageView)
         }
     }
 
@@ -59,6 +57,10 @@ class MovieAdapter(private val context: Context, diffCallback: DiffUtil.ItemCall
                 .appendPath(path)
         }
         return uriBuilder.build()
+    }
+
+    override fun getItemCount(): Int {
+        return movieList.size
     }
 }
 
