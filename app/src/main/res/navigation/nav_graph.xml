@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/popularMoviesFragment"
-        android:name="com.awalideck.moviesapp.popularmovies.PopularMoviesFragment"
-        android:label="@string/popular_movies"
-        tools:layout="@layout/fragment_popular_movies" />
+        android:name="com.awalideck.moviesapp.popularmovies.MoviesFragment"
+        android:label="@string/movies"
+        tools:layout="@layout/fragment_movies" />
 </navigation>
