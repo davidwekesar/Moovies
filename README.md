@@ -1,8 +1,8 @@
 # Movies App
 A movie app for android that uses [The Movie Database API](https://www.themoviedb.org/documentation/api) to fetch movies. Currently a work-in-progress.
 
-## Preview
-![imageedit_2_4172552170](https://user-images.githubusercontent.com/20060833/124125436-46997d80-da82-11eb-9edf-3c658e38307e.png)
+## Screenshot
+![imageedit_2_5454518588](https://user-images.githubusercontent.com/20060833/124484567-3d771c00-ddb4-11eb-929c-a338bb5dc00c.png)
 
 ### Dependencies
 * [Retrofit](https://github.com/square/retrofit) - A type-safe HTTP client for Android and Java.
