@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.awalideck.moviesapp.databinding.FragmentCategoryMovieBinding
 
 class CategoryMovieFragment : Fragment() {
@@ -31,8 +32,11 @@ class CategoryMovieFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(MoviesViewModel::class.java)
 
-        viewModel.response.observe(viewLifecycleOwner, {
-            val movieAdapter = MovieAdapter(requireContext(), it)
+        viewModel.response.observe(viewLifecycleOwner, { movies ->
+            val movieAdapter = MovieAdapter(requireContext(), movies, MovieItemListener { movieId ->
+                val action = MoviesFragmentDirections.actionMoviesFragmentToDetailsActivity(movieId)
+                findNavController().navigate(action)
+            })
             binding.movieList.adapter = movieAdapter
         })
 

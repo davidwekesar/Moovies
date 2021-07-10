@@ -1,5 +1,6 @@
 package com.awalideck.moviesapp.utils
 
+import android.net.Uri
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -14,4 +15,17 @@ fun formatDate(date: String): String {
     val oldDate = oldDateFormat.parse(date)!!
     val newDateFormat = SimpleDateFormat(newPattern, Locale.getDefault())
     return newDateFormat.format(oldDate)
+}
+
+fun getPosterURL(path: String): Uri {
+    val uriBuilder = Uri.Builder()
+    uriBuilder.apply {
+        scheme("https")
+            .authority("image.tmdb.org")
+            .appendPath("t")
+            .appendPath("p")
+            .appendPath("original")
+            .appendPath(path)
+    }
+    return uriBuilder.build()
 }

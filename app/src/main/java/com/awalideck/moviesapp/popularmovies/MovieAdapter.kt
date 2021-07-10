@@ -4,16 +4,21 @@ import android.content.Context
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.awalideck.moviesapp.R
 import com.awalideck.moviesapp.databinding.ListItemMovieBinding
 import com.awalideck.moviesapp.models.Movie
 import com.awalideck.moviesapp.utils.formatDate
+import com.awalideck.moviesapp.utils.getPosterURL
 import com.squareup.picasso.Picasso
 
-class MovieAdapter(private val context: Context, private val movieList: List<Movie>) :
-    RecyclerView.Adapter<MovieViewHolder>() {
+class MovieAdapter(
+    private val context: Context,
+    private val movieList: List<Movie>,
+    private val movieItemListener: MovieItemListener
+) : RecyclerView.Adapter<MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -29,11 +34,14 @@ class MovieAdapter(private val context: Context, private val movieList: List<Mov
             holder.releaseDateTV.text = setTheReleaseDate(releaseDate)
             Picasso.get()
                 .load(getPosterURL(posterPath))
-                .resize(108, 160)
+                .resizeDimen(R.dimen.poster_image_width, R.dimen.poster_image_height)
                 .onlyScaleDown()
                 .placeholder(R.drawable.ic_image_24)
                 .error(R.drawable.ic_broken_image_24)
                 .into(holder.posterImageView)
+        }
+        holder.moreButton.setOnClickListener {
+            movieItemListener.onClick(movie)
         }
     }
 
@@ -46,22 +54,13 @@ class MovieAdapter(private val context: Context, private val movieList: List<Mov
         )
     }
 
-    private fun getPosterURL(path: String): Uri {
-        val uriBuilder = Uri.Builder()
-        uriBuilder.apply {
-            scheme("https")
-                .authority("image.tmdb.org")
-                .appendPath("t")
-                .appendPath("p")
-                .appendPath("original")
-                .appendPath(path)
-        }
-        return uriBuilder.build()
-    }
-
     override fun getItemCount(): Int {
         return movieList.size
     }
+}
+
+class MovieItemListener(val clickListener: (movieId: Int) -> Unit) {
+    fun onClick(movie: Movie) = clickListener(movie.id)
 }
 
 object MovieComparator : DiffUtil.ItemCallback<Movie>() {

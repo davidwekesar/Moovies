@@ -3,17 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/popularMoviesFragment">
+    app:startDestination="@id/moviesFragment">
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.awalideck.moviesapp.SearchFragment"
-        android:label="SearchFragment"
-        tools:layout="@layout/fragment_search" />
-
-    <fragment
-        android:id="@+id/popularMoviesFragment"
+        android:id="@+id/moviesFragment"
         android:name="com.awalideck.moviesapp.popularmovies.MoviesFragment"
         android:label="@string/movies"
-        tools:layout="@layout/fragment_movies" />
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryMovieFragment"
+        android:name="com.awalideck.moviesapp.popularmovies.CategoryMovieFragment"
+        android:label="CategoryMovieFragment"
+        tools:layout="@layout/fragment_category_movie"/>
+
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.awalideck.moviesapp.details.DetailsActivity"
+        android:label="DetailsActivity"
+        tools:layout="@layout/activity_details">
+        <argument
+            android:name="movieID"
+            app:argType="integer" />
+    </activity>
 </navigation>

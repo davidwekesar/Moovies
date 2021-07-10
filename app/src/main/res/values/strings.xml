@@ -12,4 +12,9 @@
     <string name="upcoming">Upcoming</string>
     <string name="popular">Popular</string>
     <string name="top_rated">Top Rated</string>
+    <string name="overview">Overview</string>
+    <string name="production_companies">Production Companies</string>
+    <string name="time_format">%02dh %02dm</string>
+    <string name="height">Height: %02d</string>
+    <string name="width">Width: %02d</string>
 </resources>

@@ -25,6 +25,9 @@ interface MovieApiService {
 
     @GET("3/movie/{category}?api_key=${BuildConfig.MOVIEDB_KEY}&language=en-US&page=1")
     suspend fun getPopularMovies(@Path("category") category: String): PopularMovies
+
+    @GET("3/movie/{movieId}?api_key=${BuildConfig.MOVIEDB_KEY}&language=en-US")
+    suspend fun getMovieDetails(@Path("movieId") movieId: Int): MovieDetails
 }
 
 object MovieApi {
