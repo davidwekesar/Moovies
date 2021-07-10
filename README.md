@@ -1,5 +1,5 @@
-# Movies App
-A movie app for android that uses [The Movie Database API](https://www.themoviedb.org/documentation/api) to fetch movies. Currently a work-in-progress.
+# Moovies
+An android app that uses [The Movie Database API](https://www.themoviedb.org/documentation/api) to fetch movies. Currently a work-in-progress.
 
 ## Screenshots
 ![imageedit_4_5516059383](https://user-images.githubusercontent.com/20060833/125163912-12b40b80-e198-11eb-8e4f-fe0521124fb3.png)
