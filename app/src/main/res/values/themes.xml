@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.MoviesApp.DetailsActivity" parent="Theme.MoviesApp">
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
