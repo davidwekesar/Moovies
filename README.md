@@ -1,10 +1,9 @@
 # Moovies
-An android app that uses [The Movie Database API](https://www.themoviedb.org/documentation/api) to fetch movies. Currently a work-in-progress.
+An app that fetches movies from the network. Uses [The Movie Database API](https://www.themoviedb.org/documentation/api).
 
 ## Screenshots
 ![imageedit_4_5516059383](https://user-images.githubusercontent.com/20060833/125163912-12b40b80-e198-11eb-8e4f-fe0521124fb3.png)
-![imageedit_2_2830540703](https://user-images.githubusercontent.com/20060833/125163913-16e02900-e198-11eb-8bf2-9131ae5b85c7.png)
-
+![imageedit_10_3413240346](https://user-images.githubusercontent.com/20060833/125788065-d8c26dee-071f-4991-a7fd-5c986ec5d14d.png)
 
 ### Dependencies
 * [Retrofit](https://github.com/square/retrofit) - A type-safe HTTP client for Android and Java.
