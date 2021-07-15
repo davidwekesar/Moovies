@@ -1,17 +1,15 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import android.content.Context
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.awalideck.moviesapp.R
-import com.awalideck.moviesapp.databinding.ListItemMovieBinding
-import com.awalideck.moviesapp.models.Movie
-import com.awalideck.moviesapp.utils.formatDate
-import com.awalideck.moviesapp.utils.getPosterURL
+import com.awalideck.moovies.R
+import com.awalideck.moovies.databinding.ListItemMovieBinding
+import com.awalideck.moovies.models.Movie
+import com.awalideck.moovies.utils.formatDate
+import com.awalideck.moovies.utils.getPosterURL
 import com.squareup.picasso.Picasso
 
 class MovieAdapter(

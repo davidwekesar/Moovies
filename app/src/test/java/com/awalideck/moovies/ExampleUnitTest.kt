@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp
+package com.awalideck.moovies
 
 import org.junit.Test
 

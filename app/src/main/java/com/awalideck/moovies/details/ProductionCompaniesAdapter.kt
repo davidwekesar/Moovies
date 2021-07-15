@@ -1,24 +1,16 @@
-package com.awalideck.moviesapp.details
+package com.awalideck.moovies.details
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.awalideck.moviesapp.R
-import com.awalideck.moviesapp.data.network.ProductionCompany
-import com.awalideck.moviesapp.databinding.ListItemProductionCompanyBinding
-import com.awalideck.moviesapp.utils.getPosterURL
-import com.squareup.picasso.Callback
+import com.awalideck.moovies.R
+import com.awalideck.moovies.data.network.ProductionCompany
+import com.awalideck.moovies.databinding.ListItemProductionCompanyBinding
+import com.awalideck.moovies.utils.getPosterURL
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.Target
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.lang.Exception
 
 class ProductionCompaniesAdapter(
     private val companies: List<ProductionCompany>, private val context: Context

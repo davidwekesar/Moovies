@@ -1,9 +1,9 @@
-package com.awalideck.moviesapp.details
+package com.awalideck.moovies.details
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.awalideck.moviesapp.data.network.MovieApi
-import com.awalideck.moviesapp.data.network.MovieDetails
+import com.awalideck.moovies.data.network.MovieApi
+import com.awalideck.moovies.data.network.MovieDetails
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(private val movieId: Int) : ViewModel() {

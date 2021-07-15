@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

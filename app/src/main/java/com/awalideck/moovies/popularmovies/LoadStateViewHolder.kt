@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
-import com.awalideck.moviesapp.R
-import com.awalideck.moviesapp.databinding.LoadStateItemBinding
+import com.awalideck.moovies.R
+import com.awalideck.moovies.databinding.LoadStateItemBinding
 import com.google.android.material.button.MaterialButton
 
 class LoadStateViewHolder(

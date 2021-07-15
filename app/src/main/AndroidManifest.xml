@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.awalideck.moviesapp">
+    package="com.awalideck.moovies">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
         android:theme="@style/Theme.MoviesApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".main.MainActivity">
+        <activity android:name="com.awalideck.moovies.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".details.DetailsActivity"
-            android:parentActivityName=".main.MainActivity"
+            android:name="com.awalideck.moovies.details.DetailsActivity"
+            android:parentActivityName="com.awalideck.moovies.main.MainActivity"
             android:theme="@style/Theme.MoviesApp.DetailsActivity"/>
     </application>
 

@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.awalideck.moviesapp.R
-import com.awalideck.moviesapp.databinding.FragmentMoviesBinding
+import com.awalideck.moovies.R
+import com.awalideck.moovies.databinding.FragmentMoviesBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MoviesFragment : Fragment() {

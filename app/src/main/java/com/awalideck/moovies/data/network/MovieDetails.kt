@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.data.network
+package com.awalideck.moovies.data.network
 
 import com.squareup.moshi.Json
 

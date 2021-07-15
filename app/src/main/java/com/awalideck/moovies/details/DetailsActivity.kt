@@ -1,14 +1,13 @@
-package com.awalideck.moviesapp.details
+package com.awalideck.moovies.details
 
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.navArgs
-import com.awalideck.moviesapp.R
-import com.awalideck.moviesapp.databinding.ActivityDetailsBinding
-import com.awalideck.moviesapp.utils.getPosterURL
+import com.awalideck.moovies.R
+import com.awalideck.moovies.databinding.ActivityDetailsBinding
+import com.awalideck.moovies.utils.getPosterURL
 import com.squareup.picasso.Picasso
 
 class DetailsActivity : AppCompatActivity() {

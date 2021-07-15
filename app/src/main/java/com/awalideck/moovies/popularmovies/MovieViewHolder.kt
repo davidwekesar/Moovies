@@ -1,7 +1,7 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import androidx.recyclerview.widget.RecyclerView
-import com.awalideck.moviesapp.databinding.ListItemMovieBinding
+import com.awalideck.moovies.databinding.ListItemMovieBinding
 
 class MovieViewHolder(binding: ListItemMovieBinding): RecyclerView.ViewHolder(binding.root) {
     val titleTextView = binding.titleTextView

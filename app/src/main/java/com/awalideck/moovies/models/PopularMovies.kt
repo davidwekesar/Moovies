@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.models
+package com.awalideck.moovies.models
 
 import com.squareup.moshi.Json
 

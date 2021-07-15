@@ -1,9 +1,9 @@
-package com.awalideck.moviesapp.popularmovies
+package com.awalideck.moovies.popularmovies
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.awalideck.moviesapp.data.network.MovieApi
-import com.awalideck.moviesapp.models.Movie
+import com.awalideck.moovies.data.network.MovieApi
+import com.awalideck.moovies.models.Movie
 import kotlinx.coroutines.launch
 import java.lang.Exception
 

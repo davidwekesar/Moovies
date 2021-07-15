@@ -1,11 +1,4 @@
-package com.awalideck.moviesapp.popularmovies
-
-import androidx.paging.PagingSource
-import androidx.paging.PagingState
-import com.awalideck.moviesapp.data.network.MovieApiService
-import com.awalideck.moviesapp.models.Movie
-import okio.IOException
-import retrofit2.HttpException
+package com.awalideck.moovies.popularmovies
 
 //class MoviePagingSource(
 //    private val backend: MovieApiService

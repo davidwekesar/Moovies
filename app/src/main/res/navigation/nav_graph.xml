@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.awalideck.moviesapp.popularmovies.MoviesFragment"
+        android:name="com.awalideck.moovies.popularmovies.MoviesFragment"
         android:label="@string/movies"
         tools:layout="@layout/fragment_movies" >
         <action
@@ -17,13 +17,13 @@
 
     <fragment
         android:id="@+id/categoryMovieFragment"
-        android:name="com.awalideck.moviesapp.popularmovies.CategoryMovieFragment"
+        android:name="com.awalideck.moovies.popularmovies.CategoryMovieFragment"
         android:label="CategoryMovieFragment"
         tools:layout="@layout/fragment_category_movie"/>
 
     <activity
         android:id="@+id/detailsActivity"
-        android:name="com.awalideck.moviesapp.details.DetailsActivity"
+        android:name="com.awalideck.moovies.details.DetailsActivity"
         android:label="DetailsActivity"
         tools:layout="@layout/activity_details">
         <argument

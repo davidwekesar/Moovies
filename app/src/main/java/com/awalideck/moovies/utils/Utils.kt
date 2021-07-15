@@ -1,4 +1,4 @@
-package com.awalideck.moviesapp.utils
+package com.awalideck.moovies.utils
 
 import android.net.Uri
 import java.text.SimpleDateFormat
