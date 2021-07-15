@@ -32,7 +32,7 @@ class DetailsViewModel(private val movieId: Int) : ViewModel() {
     }
 }
 
-class DetailsViewModelFactory(private val movieId: Int): ViewModelProvider.Factory {
+class DetailsViewModelFactory(private val movieId: Int) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

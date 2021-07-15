@@ -19,6 +19,7 @@ data class MovieDetails(
     val releaseDate: String,
 
     val runtime: Int,
+    val status: String,
     val title: String,
 
     @Json(name = "vote_average")
